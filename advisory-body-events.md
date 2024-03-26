@@ -1,0 +1,5 @@
+## Advisory Body Events
+
+```
+{"_id":"advisory-body-events","startUrl":["https://www.courts.ca.gov/advisorybodies.htm"],"selectors":[{"id":"advisory-body","parentSelectors":["_root"],"type":"SelectorLink","selector":".container-inlinesearch ul a, .textRight a","multiple":true,"linkType":"linkFromHref"},{"id":"meeting-past-events","parentSelectors":["advisory-body"],"type":"SelectorLink","selector":".tab-pane ul:last-of-type a","multiple":true,"linkType":"linkFromHref"},{"id":"title","parentSelectors":["meeting-past-events"],"type":"SelectorText","selector":".container-inlinesearch h3, .container-inlinesearch h2","multiple":true,"regex":""},{"id":"file","parentSelectors":["meeting-past-events"],"type":"SelectorLink","selector":".container-inlinesearch a","multiple":true,"linkType":"linkFromHref"}]}
+```
