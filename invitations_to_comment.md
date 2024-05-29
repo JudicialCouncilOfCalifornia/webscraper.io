@@ -1,0 +1,11 @@
+## Invitations to Comment
+
+Both scrapes use a manually processed and cleaned html page located on the epic environment -- https://epic-uat-jcc-courts.pantheonsite.io/sites/default/files/courts/default/invitation-to-comment--past--cleaned-html.html
+
+### Basic data for each item
+
+```{"_id":"itc_from_cleaned_html_content__past","startUrl":["https://epic-uat-jcc-courts.pantheonsite.io/sites/default/files/courts/default/invitation-to-comment--past--cleaned-html.html"],"selectors":[{"id":"itc_category_wrapper","multiple":true,"parentSelectors":["_root"],"selector":".itc__category__wrapper","type":"SelectorElement"},{"id":"itc_content_items","multiple":true,"parentSelectors":["itc_category_wrapper"],"selector":".panel-body .itc__item","type":"SelectorElement"},{"id":"itc_comment_number","multiple":false,"parentSelectors":["itc_content_items"],"regex":"(?<=Item Number:\\s)([^\\s]+)","selector":"p:first-child","type":"SelectorText"},{"id":"itc_comment_title","linkType":"linkFromHref","multiple":false,"parentSelectors":["itc_content_items"],"selector":"p a[href$=\".pdf\"]","type":"SelectorLink"},{"id":"itc_comment_category","multiple":false,"parentSelectors":["itc_category_wrapper"],"regex":"","selector":".panel-title a","type":"SelectorText"}]}```
+
+### Body/Descriptions for each item
+
+```{"_id":"itc_from_cleaned_html_descriptions__past","startUrl":["https://epic-uat-jcc-courts.pantheonsite.io/sites/default/files/courts/default/invitation-to-comment--past--cleaned-html.html"],"selectors":[{"id":"itc_category_wrapper","parentSelectors":["_root"],"type":"SelectorElement","selector":".itc__category__wrapper","multiple":true},{"id":"itc_content_items","parentSelectors":["itc_category_wrapper"],"type":"SelectorElement","selector":".panel-body .itc__item","multiple":true},{"id":"itc_comment_number","parentSelectors":["itc_content_items"],"type":"SelectorText","selector":"p:first-child","multiple":false,"regex":"(?<=Item Number:\\s)([^\\s]+)"},{"id":"itc_comment_description","parentSelectors":["itc_content_items"],"type":"SelectorHTML","selector":"p:not(:first-child)","multiple":false,"regex":""},{"id":"itc_comment_title","parentSelectors":["itc_content_items"],"type":"SelectorLink","selector":"p a[href$=\".pdf\"]","multiple":false,"linkType":"linkFromHref"}]}```
